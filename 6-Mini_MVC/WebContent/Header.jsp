@@ -9,7 +9,7 @@
 </head>
 <body>
 <%
-Member member = (Member)session.getAttribute("member");
+Member member = (Member)session.getAttribute("logIn");
 %>
 <div style="background-color:#00008b;color:#ffffff;height:20px;padding:5px;">
 SPMS(Simple Project Management System)
