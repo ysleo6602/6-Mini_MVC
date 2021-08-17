@@ -2,10 +2,11 @@ package spms.controls;
 
 import java.util.Map;
 
+import spms.bind.DataBinding;
 import spms.dao.MemberDao;
 import spms.vo.Member;
 
-public class MemberDeleteController implements Controller {
+public class MemberDeleteController implements Controller, DataBinding {
   MemberDao memberDao;
   
   public MemberDeleteController setMemberDao(MemberDao memberDao) {
@@ -13,8 +14,13 @@ public class MemberDeleteController implements Controller {
     return this;
   }
   
+  public Object[] getDataBinders() {
+    return new Object[] { "no", Integer.class };
+  }
+  
   public String execute(Map<String, Object> model) throws Exception {
-    memberDao.delete( ((Member)(model.get("member"))).getNo() );
+    Member member = (Member)model.get("member");
+    memberDao.delete( member.getNo() );
     
     return "redirect:list.do";
   }
