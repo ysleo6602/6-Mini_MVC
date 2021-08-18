@@ -2,6 +2,11 @@
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
   <display-name>6-Mini_MVC</display-name>
   
+  <context-param>
+  	<param-name>contextConfigLocation</param-name>
+  	<param-value>/WEB-INF/application-context.properties</param-value>
+  </context-param>
+  
   <resource-ref>
   	<res-ref-name>jdbc/studydb</res-ref-name>
   	<res-type>javax.sql.DataSource</res-type>
